@@ -1,50 +1,68 @@
 package com.fire.support.ui.main;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
+import com.canyinghao.canadapter.CanOnItemListener;
 import com.fire.support.R;
+import com.fire.support.adapter.MainAdapter;
 import com.fire.support.base.BaseActivity;
+import com.fire.support.model.MainItemBean;
 import com.fire.support.ui.demo.GaussianBlurActivity;
-import com.fire.support.utils.PhoneHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity {
 
-    @BindView(R.id.tv_hello)
-    TextView tvHello;
+    @BindView(R.id.recycler)
+    RecyclerView recycler;
+
+    private MainAdapter mMainAdapter;
 
     @Override
     public void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
+
+        mMainAdapter = new MainAdapter(recycler);
+        recycler.setLayoutManager(new LinearLayoutManager(context));
+        recycler.setAdapter(mMainAdapter);
+
     }
 
     @Override
     public void initListener(Bundle savedInstanceState) {
-
+        mMainAdapter.setOnItemListener(new CanOnItemListener() {
+            @Override
+            public void onItemChildClick(View view, int position) {
+                switch (mMainAdapter.getItem(position).id) {
+                    case 1://高斯模糊
+                        startActivity(new Intent(MainActivity.this, GaussianBlurActivity.class));
+                        break;
+                }
+            }
+        });
     }
 
     @Override
     public void initData(Bundle savedInstanceState) {
+        List<MainItemBean> list = new ArrayList<>();
+
+        MainItemBean gaussian = new MainItemBean();
+        gaussian.id = 1;
+        gaussian.title = "高斯模糊";
+
+        list.add(gaussian);
+
+        mMainAdapter.setList(list);
 
     }
-
-    @OnClick({R.id.tv_hello})
-    public void onClickButterKnife(View view) {
-        int id = view.getId();
-        switch (id) {
-            case R.id.tv_hello:
-                startActivity(new Intent(this, GaussianBlurActivity.class));
-                break;
-        }
-    }
-
 
 }
