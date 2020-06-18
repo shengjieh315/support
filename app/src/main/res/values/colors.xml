@@ -1,6 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
+
+    <!--主要色调-->
+    <color name="colorPrimary">#FC6976</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="colorBg">#f5f5f5</color>
+
+    <color name="colorLine">#E5E5E5</color>
+
+    <color name="colorBlack">#000000</color>
+    <color name="colorBlack1">#111111</color>
+    <color name="colorBlack2">#222222</color>
+    <color name="colorBlack3">#333333</color>
+    <color name="colorBlack4">#444444</color>
+    <color name="colorBlack5">#555555</color>
+    <color name="colorBlack6">#666666</color>
+    <color name="colorBlack7">#777777</color>
+    <color name="colorBlack8">#888888</color>
+    <color name="colorBlack9">#999999</color>
+    <color name="colorBlackC">#cccccc</color>
+    <color name="colorBlackD">#dddddd</color>
+    <color name="colorBlackB6">#b6b6b6</color>
+
+
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorWhite9">#E5ffffff</color>
+    <color name="colorWhite8">#ccffffff</color>
+    <color name="colorWhite7">#b2ffffff</color>
+    <color name="colorWhite5">#7Fffffff</color>
+    <color name="colorWhite4">#66ffffff</color>
+    <color name="colorWhite3">#4dffffff</color>
+    <color name="colorWhite2">#33ffffff</color>
+    <color name="colorWhite1">#1fffffff</color>
+
+
+    <color name="colorOrange">#FF9462</color>
+
+    <color name="colorYellow">#F8E818</color>
+
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorBlackAlpha9">#E5000000</color>
+    <color name="colorBlackAlpha8">#cc000000</color>
+    <color name="colorBlackAlpha5">#7F000000</color>
+    <color name="colorBlackAlpha4">#66000000</color>
+    <color name="colorBlackAlpha3">#4D000000</color>
+
+    <color name="colorTag0">#8866dd</color>
+    <color name="colorTag1">#009eec</color>
+    <color name="colorTag2">#7ed321</color>
+    <color name="colorTag3">#d25ab9</color>
+    <color name="colorTag4">#fa7669</color>
+    <color name="colorTag5">#ffc323</color>
+
+    <color name="colorSelectTag1">#FA7B6E</color>
+    <color name="colorSelectTag2">#25D7E4</color>
+    <color name="colorSelectTag3">#3BAFFF</color>
+    <color name="colorSelectTag4">#FF84FC</color>
+    <color name="colorSelectTag5">#7ED321</color>
+    <color name="colorSelectTag6">#FFC323</color>
+
 </resources>
