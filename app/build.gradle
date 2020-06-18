@@ -11,6 +11,13 @@ android {
         versionCode 1
         versionName "1.0"
 
+        // v8 renderscript 库
+        // 此库增加了对 RenderScript 计算框架的支持。这些 API 包含在 android.support.v8.renderscript 软件包中。
+        // 您应该注意，在应用中添加这些 API 的步骤与添加其他支持库 API 大不相同。
+        renderscriptTargetApi 18
+        renderscriptSupportModeEnabled true
+
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

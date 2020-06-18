@@ -1,11 +1,14 @@
 package com.fire.support.ui.main;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 import com.fire.support.R;
 import com.fire.support.base.BaseActivity;
+import com.fire.support.ui.demo.GaussianBlurActivity;
 import com.fire.support.utils.PhoneHelper;
 
 import butterknife.BindView;
@@ -38,7 +41,7 @@ public class MainActivity extends BaseActivity {
         int id = view.getId();
         switch (id) {
             case R.id.tv_hello:
-                PhoneHelper.getInstance().show("hello");
+                startActivity(new Intent(this, GaussianBlurActivity.class));
                 break;
         }
     }
