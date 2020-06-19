@@ -22,6 +22,7 @@
         </activity>
 
         <activity android:name=".ui.demo.GaussianBlurActivity"/>
+        <activity android:name=".ui.demo.GalleryActivity"/>
     </application>
 
 

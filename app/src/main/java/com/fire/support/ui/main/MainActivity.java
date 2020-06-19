@@ -9,6 +9,7 @@ import com.fire.support.R;
 import com.fire.support.adapter.MainAdapter;
 import com.fire.support.base.BaseActivity;
 import com.fire.support.model.MainItemBean;
+import com.fire.support.ui.demo.GalleryActivity;
 import com.fire.support.ui.demo.GaussianBlurActivity;
 
 import java.util.ArrayList;
@@ -30,11 +31,9 @@ public class MainActivity extends BaseActivity {
     public void initView(Bundle savedInstanceState) {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         mMainAdapter = new MainAdapter(recycler);
         recycler.setLayoutManager(new LinearLayoutManager(context));
         recycler.setAdapter(mMainAdapter);
-
     }
 
     @Override
@@ -45,6 +44,9 @@ public class MainActivity extends BaseActivity {
                 switch (mMainAdapter.getItem(position).id) {
                     case 1://高斯模糊
                         startActivity(new Intent(MainActivity.this, GaussianBlurActivity.class));
+                        break;
+                    case 2://循环画廊
+                        startActivity(new Intent(MainActivity.this, GalleryActivity.class));
                         break;
                 }
             }
@@ -58,8 +60,12 @@ public class MainActivity extends BaseActivity {
         MainItemBean gaussian = new MainItemBean();
         gaussian.id = 1;
         gaussian.title = "高斯模糊";
+        MainItemBean gallery = new MainItemBean();
+        gallery.id = 2;
+        gallery.title = "循环画廊";
 
         list.add(gaussian);
+        list.add(gallery);
 
         mMainAdapter.setList(list);
 

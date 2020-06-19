@@ -8,11 +8,13 @@ import android.util.TypedValue;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.fire.support.R;
+import com.fire.support.utils.PhoneHelper;
+import com.fire.support.utils.Utils;
+import com.fire.support.utils.screen.ScreenAdaptUtil;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +30,11 @@ public abstract class BaseActivity extends AppCompatActivity {
         setTheme(R.style.AppTheme_Main);
         context = this;
         try {
+            ScreenAdaptUtil.setCustomDensity(context, getApplication());
+            if (Utils.isMaxLOLLIPOP()) {
+                View rootView = findViewById(android.R.id.content);
+                rootView.setPadding(0, getStatusBarHeight(), 0, 0);
+            }
             initView(savedInstanceState);
             initListener(savedInstanceState);
             initData(savedInstanceState);
@@ -105,6 +112,17 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public int getScreenWidth() {
         return findViewById(android.R.id.content).getWidth();
+    }
+
+    /**
+     * 状态栏高度
+     *
+     * @return int
+     */
+    public int getStatusBarHeight() {
+
+        return PhoneHelper.getInstance().getStatusBarHeight();
+
     }
 
     /**
