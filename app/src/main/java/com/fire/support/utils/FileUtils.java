@@ -16,10 +16,8 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * Created by wangchengm
- * on 2017/7/27.
+ * 文件工具类
  */
-
 public class FileUtils {
 
     private static final String EXTERNAL_STORAGE_PERMISSION = "android.permission.WRITE_EXTERNAL_STORAGE";

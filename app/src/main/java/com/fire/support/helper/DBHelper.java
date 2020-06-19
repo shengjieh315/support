@@ -22,7 +22,6 @@ import java.util.List;
 
 /**
  * 数据库封装工具类
- * Created by yangjian on 15/8/17.
  */
 public class DBHelper<T extends Model> {
 

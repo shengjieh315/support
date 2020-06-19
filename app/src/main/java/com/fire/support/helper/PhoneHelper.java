@@ -53,8 +53,6 @@ import androidx.core.content.FileProvider;
 
 /**
  * 与电话相关功能的工具类
- *
- * @author canyinghao
  */
 public class PhoneHelper {
 
