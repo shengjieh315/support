@@ -5,7 +5,7 @@ import android.view.View;
 import com.canyinghao.canadapter.CanHolderHelper;
 import com.canyinghao.canadapter.CanRVAdapter;
 import com.fire.support.R;
-import com.fire.support.utils.PhoneHelper;
+import com.fire.support.helper.PhoneHelper;
 import com.fire.support.utils.Utils;
 import com.fire.support.view.layoutmanager.StackLayoutManager;
 

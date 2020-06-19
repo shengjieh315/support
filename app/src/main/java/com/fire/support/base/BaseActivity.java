@@ -12,7 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.fire.support.R;
-import com.fire.support.utils.PhoneHelper;
+import com.fire.support.helper.PhoneHelper;
 import com.fire.support.utils.Utils;
 import com.fire.support.utils.screen.ScreenAdaptUtil;
 

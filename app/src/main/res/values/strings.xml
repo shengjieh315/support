@@ -5,4 +5,15 @@
     <string name="open">打开</string>
 
 
+    <string name="msg_date_just_now">刚刚</string>
+    <string name="msg_date_min_ago">%1$d分钟前</string>
+    <string name="msg_date_hours_ago">%1$d小时前</string>
+    <string name="msg_date_day_ago">%1$d天前</string>
+    <string name="msg_date_yesterday">昨天</string>
+    <string name="msg_date_before_yesterday">前天</string>
+
+    <string name="msg_date_min_ago_unit">分钟前</string>
+    <string name="msg_date_hours_ago_unit">小时前</string>
+    <string name="msg_date_day_ago_unit">天前</string>
+
 </resources>

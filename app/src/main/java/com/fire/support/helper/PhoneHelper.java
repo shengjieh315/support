@@ -1,4 +1,4 @@
-package com.fire.support.utils;
+package com.fire.support.helper;
 
 import android.annotation.SuppressLint;
 import android.content.ActivityNotFoundException;
@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.fire.support.App;
 import com.fire.support.model.MarketPkgBean;
+import com.fire.support.utils.PreferenceUtil;
 import com.fire.support.utils.screen.AutoLayoutConfig;
 import com.fire.support.utils.screen.ScreenAdaptUtil;
 import com.fire.support.view.toast.ZyToast;
