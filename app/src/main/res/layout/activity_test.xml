@@ -8,6 +8,8 @@
         android:id="@+id/refresh"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/view_bar"
+        android:visibility="gone"
         app:bg_down="@color/colorBg"
         app:bg_up="@color/colorPrimary"
         app:style_down="classic"
@@ -21,8 +23,7 @@
         <RelativeLayout
             android:id="@+id/refresh_content_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/colorWhite">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/iv_bg"
@@ -43,5 +44,22 @@
 
 
     </com.fire.support.view.refresh.RefreshLayout>
+
+    <ImageView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_200"
+        android:layout_alignParentBottom="true"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ico_yx"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/refresh_footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_200"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ico_yx"
+        android:visibility="gone" />
 
 </RelativeLayout>

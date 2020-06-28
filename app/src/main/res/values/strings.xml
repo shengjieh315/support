@@ -16,4 +16,12 @@
     <string name="msg_date_hours_ago_unit">小时前</string>
     <string name="msg_date_day_ago_unit">天前</string>
 
+    <!--refresh-->
+    <string name="refresh_down">下拉刷新</string>
+    <string name="refreshing">正在刷新&#8230;请稍后</string>
+    <string name="refresh_complete">刷新完成</string>
+    <string name="refresh_release">好了快放开我</string>
+    <string name="refresh_pull_down">下拉刷新哦</string>
+    <string name="refresh_time">上次刷新时间：%1$s</string>
+
 </resources>

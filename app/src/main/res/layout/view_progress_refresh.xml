@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_space"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_refresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:padding="@dimen/dimen_20"
+        android:text="@string/refresh_down"
+        android:textColor="@color/colorWhite7"
+        android:textSize="@dimen/text_28" />
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dimen_120">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_refresh"
+            android:layout_width="@dimen/dimen_150"
+            android:layout_height="@dimen/dimen_76"
+            android:layout_gravity="center"
+            app:actualImageResource="@mipmap/icon_all_loading_1"
+            app:actualImageScaleType="centerInside" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_loading"
+            android:layout_width="@dimen/dimen_150"
+            android:layout_height="@dimen/dimen_76"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true" />
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -27,7 +27,7 @@ public class ZyToast {
         mToast = new Toast(context);
         mToast.setDuration(duration);
         try {
-            View v = LayoutInflater.from(context).inflate(R.layout.view_zytoast, null);
+            View v = LayoutInflater.from(context).inflate(R.layout.view_toast, null);
 
             TextView textView = v.findViewById(R.id.tv_toast);
             textView.setText(text);

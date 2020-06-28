@@ -25,4 +25,29 @@
         <attr name="sl_dy" format="dimension" />
     </declare-styleable>
 
+
+    <declare-styleable name="RefreshLayout">
+        <attr name="enabled_up" format="boolean" />
+        <attr name="enabled_down" format="boolean" />
+        <attr name="style_up" format="enum">
+            <enum name="classic" value="0" />
+            <enum name="upper" value="1" />
+            <enum name="lower" value="2" />
+            <enum name="mid" value="3" />
+        </attr>
+        <attr name="style_down" format="enum">
+            <enum name="classic" value="0" />
+            <enum name="upper" value="1" />
+            <enum name="lower" value="2" />
+            <enum name="mid" value="3" />
+        </attr>
+        <attr name="friction" format="float" />
+        <attr name="duration" format="integer" />
+        <attr name="smooth_length" format="integer" />
+        <attr name="smooth_duration" format="integer" />
+        <attr name="bg_up" format="reference" />
+        <attr name="bg_down" format="reference" />
+        <attr name="is_coo" format="boolean" />
+    </declare-styleable>
+
 </resources>

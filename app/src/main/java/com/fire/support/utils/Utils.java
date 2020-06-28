@@ -15,6 +15,7 @@ import android.view.View;
 import com.fire.support.R;
 import com.socks.library.KLog;
 
+import java.io.File;
 import java.util.List;
 
 import androidx.core.graphics.drawable.DrawableCompat;
@@ -216,6 +217,41 @@ public class Utils {
     public static boolean isMaxLOLLIPOP() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP;
     }
+
+    /**
+     * 缓存文件夹
+     *
+     * @param context Context
+     * @return File
+     */
+    public static File getCacheDir(Context context) {
+        File file = null;
+        try {
+            file = context.getExternalCacheDir();
+        } catch (Throwable e) {
+
+            e.printStackTrace();
+        }
+
+
+        boolean isSuccess = false;
+
+        if (file != null && file.canRead() && file.canWrite()) {
+
+            isSuccess = true;
+
+        }
+
+        if (!isSuccess) {
+
+            file = context.getCacheDir();
+        }
+
+
+        return file;
+    }
+
+
 
 
 }
