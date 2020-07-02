@@ -16,9 +16,11 @@ import com.fire.support.R;
 import com.socks.library.KLog;
 
 import java.io.File;
+import java.lang.reflect.Field;
 import java.util.List;
 
 import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class Utils {
 
@@ -251,7 +253,18 @@ public class Utils {
         return file;
     }
 
-
+    /**
+     *  反射设定RecyclerView最大滑动速度
+     */
+    public static void setMaxFlingVelocity(RecyclerView recyclerView, int velocity) {
+        try{
+            Field field = recyclerView.getClass().getDeclaredField("mMaxFlingVelocity");
+            field.setAccessible(true);
+            field.set(recyclerView, velocity);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 
 }
