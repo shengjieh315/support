@@ -20,6 +20,6 @@ public class MainAdapter extends CanRVAdapter<MainItemBean> {
 
     @Override
     protected void setItemListener(CanHolderHelper helper) {
-        helper.setItemChildClickListener(R.id.tv_title);
+        helper.setItemChildClickListener(R.id.rl_content);
     }
 }
