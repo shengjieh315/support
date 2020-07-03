@@ -1,5 +1,6 @@
 package com.fire.support.helper;
 
+
 import android.annotation.SuppressLint;
 import android.text.TextUtils;
 
@@ -37,47 +38,53 @@ public class DateHelper {
         super();
     }
 
-    private SimpleDateFormat date_Format_Year_Month = new SimpleDateFormat("yyyy.MM");
+    public SimpleDateFormat date_Formater_Year_Month = new SimpleDateFormat("yyyy.MM");
 
-    private SimpleDateFormat date_Format_Day = new SimpleDateFormat("dd");
+    public SimpleDateFormat date_Formater_Day = new SimpleDateFormat("dd");
 
-    private SimpleDateFormat date_Format_1 = new SimpleDateFormat("yyyy.MM.dd HH:mm");
+    public SimpleDateFormat date_Formater_1 = new SimpleDateFormat(
+            "yyyy.MM.dd HH:mm");
 
-    private SimpleDateFormat date_Format_2 = new SimpleDateFormat("yyyy.MM.dd");
+    public SimpleDateFormat date_Formater_2 = new SimpleDateFormat("yyyy.MM.dd");
 
-    private SimpleDateFormat date_Format_3 = new SimpleDateFormat("EE HH:mm");
+    public SimpleDateFormat date_Formater_3 = new SimpleDateFormat(
+            "EE HH:mm");
 
-    public SimpleDateFormat date_Format_4 = new SimpleDateFormat("yyyy.MM.dd EE");
+    public SimpleDateFormat date_Formater_4 = new SimpleDateFormat(
+            "yyyy.MM.dd EE");
 
-    private SimpleDateFormat date_Format_5 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public SimpleDateFormat date_Formater_5 = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-    private SimpleDateFormat date_Format_hours = new SimpleDateFormat("HH:mm");
+    public SimpleDateFormat date_Formater_hours = new SimpleDateFormat(
+            "HH:mm");
 
-    private SimpleDateFormat date_Format_y = new SimpleDateFormat("yyyy");
+    public SimpleDateFormat date_Formater_y = new SimpleDateFormat("yyyy");
 
-    private SimpleDateFormat date_Format_6 = new SimpleDateFormat("yyyy年M月d日");
+    public SimpleDateFormat date_Formater_6 = new SimpleDateFormat("yyyy年M月d日");
 
-    private SimpleDateFormat date_Format_7 = new SimpleDateFormat("MM-dd HH:mm");
+    public SimpleDateFormat date_Formater_7 = new SimpleDateFormat("MM-dd HH:mm");
 
-    private SimpleDateFormat date_Format_8 = new SimpleDateFormat("HH:mm");
+    public SimpleDateFormat date_Formater_8 = new SimpleDateFormat("HH:mm");
 
-    private SimpleDateFormat date_Format_9 = new SimpleDateFormat("MM月dd日");
+    public SimpleDateFormat date_Formater_9 = new SimpleDateFormat("MM月dd日");
 
-    private SimpleDateFormat date_Format_10 = new SimpleDateFormat("yyyy.MM.dd HH:mm");
+    public SimpleDateFormat date_Formater_10 = new SimpleDateFormat("yyyy.MM.dd HH:mm");
 
-    private SimpleDateFormat date_Format_11 = new SimpleDateFormat("yyyy-MM-dd");
+    public SimpleDateFormat date_Formater_11 = new SimpleDateFormat("yyyy-MM-dd");
 
-    private SimpleDateFormat date_Format_12 = new SimpleDateFormat("MM-dd");
+    public SimpleDateFormat date_Formater_12 = new SimpleDateFormat("MM-dd");
 
-    private SimpleDateFormat date_Format_13 = new SimpleDateFormat("yyyy/MM/dd HH:mm");
+    public SimpleDateFormat date_Formater_13 = new SimpleDateFormat("yyyy/MM/dd HH:mm");
 
-    private SimpleDateFormat date_Format_14 = new SimpleDateFormat("yyyy.MM");
+    public SimpleDateFormat date_Formater_14 = new SimpleDateFormat("yyyy.MM");
 
-    private SimpleDateFormat date_Format_15 = new SimpleDateFormat("dd");
+    public SimpleDateFormat date_Formater_15 = new SimpleDateFormat("dd");
 
-    private SimpleDateFormat date_Format_16 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    public SimpleDateFormat date_Formater_16 = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
-    private SimpleDateFormat date_Format_17 = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+    public SimpleDateFormat date_Formater_17 = new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
+
+    public SimpleDateFormat date_Formater_18 = new SimpleDateFormat("MM.dd");
 
 
     public String getMinLong() {
@@ -93,7 +100,7 @@ public class DateHelper {
             return date;
         }
         try {
-            date = date_Format_1.parse(dateStr);
+            date = date_Formater_1.parse(dateStr);
             return date;
         } catch (ParseException e) {
             e.printStackTrace();
@@ -117,7 +124,7 @@ public class DateHelper {
         if (date == null) {
             date = new Date();
         }
-        return date_Format_1.format(date);
+        return date_Formater_1.format(date);
 
 
     }
@@ -126,21 +133,21 @@ public class DateHelper {
         if (date == null) {
             date = new Date();
         }
-        return date_Format_2.format(date);
+        return date_Formater_2.format(date);
 
     }
 
     public String getDataString_2(long timeMillis) {
         Date date = new Date(timeMillis);
 
-        return date_Format_2.format(date);
+        return date_Formater_2.format(date);
 
     }
 
     public String getDataString_Y(long timeMillis) {
         Date date = new Date(timeMillis);
 
-        return date_Format_y.format(date);
+        return date_Formater_y.format(date);
 
     }
 
@@ -148,7 +155,7 @@ public class DateHelper {
         if (date == null) {
             date = new Date();
         }
-        return date_Format_3.format(date);
+        return date_Formater_3.format(date);
 
 
     }
@@ -157,7 +164,7 @@ public class DateHelper {
         if (date == null) {
             date = new Date();
         }
-        String str = date_Format_5.format(date);
+        String str = date_Formater_5.format(date);
         return str;
 
     }
@@ -166,7 +173,7 @@ public class DateHelper {
         if (date == null) {
             date = new Date();
         }
-        String str = date_Format_6.format(date);
+        String str = date_Formater_6.format(date);
         return str;
 
     }
@@ -175,7 +182,7 @@ public class DateHelper {
         if (date == null) {
             date = new Date();
         }
-        String str = date_Format_7.format(date);
+        String str = date_Formater_7.format(date);
         return str;
 
     }
@@ -184,7 +191,7 @@ public class DateHelper {
         if (date == null) {
             date = new Date();
         }
-        String str = date_Format_8.format(date);
+        String str = date_Formater_8.format(date);
         return str;
 
     }
@@ -192,7 +199,7 @@ public class DateHelper {
     public String getTimeString10(String time) {
         try {
             Long l = Long.parseLong(time);
-            String times = date_Format_10.format(new Date(l));
+            String times = date_Formater_10.format(new Date(l));
             return times;
         } catch (Exception e) {
             return time;
@@ -202,7 +209,7 @@ public class DateHelper {
     public String getTimeString9(String time) {
         try {
             Long l = Long.parseLong(time);
-            String times = date_Format_9.format(new Date(l));
+            String times = date_Formater_9.format(new Date(l));
             return times;
         } catch (Exception e) {
             return time;
@@ -212,7 +219,7 @@ public class DateHelper {
 
     public String getTimeString14(long l) {
         try {
-            return date_Format_14.format(new Date(l));
+            return date_Formater_14.format(new Date(l));
         } catch (Exception e) {
             return "";
         }
@@ -220,7 +227,7 @@ public class DateHelper {
 
     public String getTimeString15(long l) {
         try {
-            return date_Format_15.format(new Date(l));
+            return date_Formater_15.format(new Date(l));
         } catch (Exception e) {
             return "";
         }
@@ -228,7 +235,7 @@ public class DateHelper {
 
     public String getTimeString16(long l) {
         try {
-            return date_Format_16.format(new Date(l));
+            return date_Formater_16.format(new Date(l));
         } catch (Exception e) {
             return "";
         }
@@ -236,7 +243,7 @@ public class DateHelper {
 
     public String getTimeString5(long l) {
         try {
-            return date_Format_5.format(new Date(l));
+            return date_Formater_5.format(new Date(l));
         } catch (Exception e) {
             return "";
         }
@@ -244,7 +251,7 @@ public class DateHelper {
 
     public String getTimeString6(long l) {
         try {
-            return date_Format_6.format(new Date(l));
+            return date_Formater_6.format(new Date(l));
         } catch (Exception e) {
             return "";
         }
@@ -252,7 +259,7 @@ public class DateHelper {
 
     public String getTimeString17(long l) {
         try {
-            return date_Format_17.format(new Date(l));
+            return date_Formater_17.format(new Date(l));
         } catch (Exception e) {
             return "";
         }
@@ -260,7 +267,7 @@ public class DateHelper {
 
     public String getTimeString11(long l) {
         try {
-            return date_Format_11.format(new Date(l));
+            return date_Formater_11.format(new Date(l));
         } catch (Exception e) {
             return "";
         }
@@ -270,18 +277,59 @@ public class DateHelper {
         if (date == null) {
             date = new Date();
         }
-        return date_Format_11.format(date);
+        return date_Formater_11.format(date);
     }
 
     public String getDataString_12(Date date) {
         if (date == null) {
             date = new Date();
         }
-        return date_Format_12.format(date);
+        return date_Formater_12.format(date);
+    }
+
+    public long getDataTaskM(long timeMillis, int TimeSpan) {
+        try {
+            SimpleDateFormat dateFormater = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = new Date(timeMillis);
+            String dateStr = dateFormater.format(date);
+            String[] datas = dateStr.split("-");
+            int year = Integer.valueOf(datas[0]);
+            int month = Integer.valueOf(datas[1]);
+            int day = Integer.valueOf(datas[2]);
+            if (month > TimeSpan) {
+                month = month - TimeSpan;
+            } else if (month == TimeSpan) {
+                year--;
+                month = 12;
+            } else {
+                analysisTaskTime(year, month, TimeSpan, 0);
+            }
+            String time = year + "-" + month + "-" + day;
+            SimpleDateFormat datep = new SimpleDateFormat("yyyy-MM-dd");
+            Date datel = datep.parse(time);
+            return datel.getTime();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return timeMillis;
+    }
+
+    private void analysisTaskTime(int year, int month, int TimeSpan, int loaclMonth) {
+        loaclMonth += month;
+        year--;
+        month = 12;
+        if (month > TimeSpan - loaclMonth) {
+            month = month - (TimeSpan - loaclMonth);
+        } else if (month == TimeSpan - loaclMonth) {
+            month = 12;
+            year--;
+        } else {
+            analysisTaskTime(year, month, TimeSpan, loaclMonth);
+        }
     }
 
     /**
-     * 时间规则
+     * 打卡时间规则
      *
      * @param date 日期
      * @return 日期字符串
@@ -345,7 +393,7 @@ public class DateHelper {
         }
     }
 
-    public String[] getMhtCircleRecentTime(long date) {
+    public String[] getMhtCircleRencentTime(long date) {
         Date time = new Date(date);
 
         String[] ftime = {"", ""};
@@ -376,14 +424,14 @@ public class DateHelper {
             ftime[0] = String.valueOf(days);
             ftime[1] = App.getInstance().getString(R.string.msg_date_day_ago_unit);
         } else {
-            ftime[0] = date_Format_Day.format(time);
-            ftime[1] = date_Format_Year_Month.format(time);
+            ftime[0] = date_Formater_Day.format(time);
+            ftime[1] = date_Formater_Year_Month.format(time);
         }
         return ftime;
     }
 
 
-    public String getRecentTime(long date) {
+    public String getRencentTime(long date) {
         Date time = new Date(date);
 
         String ftime = "";
@@ -413,13 +461,57 @@ public class DateHelper {
         } else if (days > 2 && days < 10) {
             ftime = App.getInstance().getString(R.string.msg_date_day_ago, days);
         } else {
-            ftime = date_Format_2.format(time);
+            ftime = date_Formater_2.format(time);
+        }
+        return ftime;
+    }
+
+    /**
+     * 今年的时间，不显示年份
+     * @param date
+     * @return
+     */
+    public String getRencentYearTime(long date) {
+        Date time = new Date(date);
+
+        String ftime = "";
+        Calendar cal = Calendar.getInstance();
+
+        if (cal.getTimeInMillis() - date < 60000) {
+
+            return App.getInstance().getString(R.string.msg_date_just_now);
+        }
+
+        int days = differentDays(time, cal.getTime());
+        if (days == 0) {
+            int hour = (int) ((cal.getTimeInMillis() - time.getTime()) / 3600000);
+            if (hour == 0) {
+
+                ftime = App.getInstance().getString(R.string.msg_date_min_ago, Math.max(
+                        (cal.getTimeInMillis() - time.getTime()) / 60000, 1));
+            } else {
+                ftime = App.getInstance().getString(R.string.msg_date_hours_ago, hour);
+
+            }
+
+        } else if (days == 1) {
+            ftime = App.getInstance().getString(R.string.msg_date_yesterday);
+        } else if (days == 2) {
+            ftime = App.getInstance().getString(R.string.msg_date_before_yesterday);
+        } else if (days > 2 && days < 10) {
+            ftime = App.getInstance().getString(R.string.msg_date_day_ago, days);
+        } else {
+            if (isThisYear(time)) {
+                ftime = date_Formater_18.format(time);
+            } else {
+                ftime = date_Formater_2.format(time);
+            }
         }
         return ftime;
     }
 
 
-    public String getRecentTimeIM(long date) {
+    public String getRencentTimeIM(long date) {
         Date time = new Date(date);
         String ftime = "";
         Calendar cal = Calendar.getInstance();
@@ -428,15 +520,60 @@ public class DateHelper {
         }
         int days = differentDays(time, cal.getTime());
         if (days == 0) {
-            ftime = date_Format_hours.format(time);
+            ftime = date_Formater_hours.format(time);
         } else if (days == 1) {
             ftime = App.getInstance().getString(R.string.msg_date_yesterday);
-            ftime = ftime + " " + date_Format_hours.format(time);
+            ftime = ftime + " " + date_Formater_hours.format(time);
         } else if (days == 2) {
             ftime = App.getInstance().getString(R.string.msg_date_before_yesterday);
-            ftime = ftime + " " + date_Format_hours.format(time);
+            ftime = ftime + " " + date_Formater_hours.format(time);
         } else {
-            ftime = date_Format_13.format(time);
+            ftime = date_Formater_13.format(time);
+        }
+        return ftime;
+    }
+
+    public String getRencentTimeNotice(long date) {
+        Date time = new Date(date);
+
+        String ftime = "";
+        Calendar cal = Calendar.getInstance();
+
+        if (cal.getTimeInMillis() - date < 60000) {
+
+            return App.getInstance().getString(R.string.msg_date_just_now);
+        }
+
+        int days = differentDays(time, cal.getTime());
+        if (days == 0) {
+            int hour = (int) ((cal.getTimeInMillis() - time.getTime()) / 3600000);
+            if (hour == 0) {
+
+                ftime = App.getInstance().getString(R.string.msg_date_min_ago, Math.max(
+                        (cal.getTimeInMillis() - time.getTime()) / 60000, 1));
+            } else {
+                ftime = App.getInstance().getString(R.string.msg_date_hours_ago, hour);
+
+            }
+
+        } else if (days == 1) {
+            ftime = App.getInstance().getString(R.string.msg_date_yesterday);
+        } else if (days == 2) {
+            ftime = App.getInstance().getString(R.string.msg_date_before_yesterday);
+        } else if (days > 2 && days < 10) {
+            ftime = App.getInstance().getString(R.string.msg_date_day_ago, days);
+        } else {
+            if (getYear(cal.getTimeInMillis()) == getYear(date)) {
+
+                ftime = date_Formater_18.format(time);
+
+                if (getMonth(date) < 10 && ftime.length() > 2) {
+                    ftime = ftime.substring(1);
+                }
+
+            } else {
+                ftime = date_Formater_2.format(time);
+            }
         }
         return ftime;
     }
@@ -458,6 +595,7 @@ public class DateHelper {
         try {
             re = sdfTo.format(sdfFrom.parse(re));
         } catch (ParseException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return re;
@@ -582,10 +720,11 @@ public class DateHelper {
 
         calendar.add(calendarType, next);
         Date date = calendar.getTime();
-        return date_Format_1.format(date);
+        return date_Formater_1.format(date);
 
 
     }
+
 
     /*
      * 秒转化时分秒
@@ -700,6 +839,7 @@ public class DateHelper {
         return sb.toString();
     }
 
+
     /*
      * 秒转化天
      */
@@ -810,7 +950,7 @@ public class DateHelper {
         return d1 == d2;
     }
 
-    public boolean isYesterday(long day1, long day2) {
+    public boolean isYestoday(long day1, long day2) {
         Calendar instance = Calendar.getInstance();
         instance.setTimeInMillis(day1);
         int d1 = instance.get(Calendar.DAY_OF_YEAR);
@@ -819,7 +959,7 @@ public class DateHelper {
         return d1 - d2 == 1 || d2 - d1 == 1;
     }
 
-    public boolean isNoClockAble(long time) {
+    public boolean isNoClockable(long time) {
         long now = System.currentTimeMillis();
         return (now - time < 24 * 60 * 60 * 1000) && (getDay(now) == getDay(time)) && (getDayClockType(now) == getDayClockType(time));
     }
@@ -966,6 +1106,31 @@ public class DateHelper {
         return !sameDay;
     }
 
+    /**
+     * 判断是不是今年
+     *
+     * @param time
+     * @return
+     */
+    public boolean isThisYear(long time) {
+        return isThisYear(time);
+    }
+
+    public boolean isThisYear(Date date) {
+        try {
+            Calendar cal1 = Calendar.getInstance();
+            cal1.setTime(new Date());
+            Calendar cal2 = Calendar.getInstance();
+            cal2.setTime(date);
+            int year1 = cal1.get(Calendar.YEAR);
+            int year2 = cal2.get(Calendar.YEAR);
+            return year1 == year2;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
 
     /**
      * 单位进位，中文默认为4位即（万、亿）
@@ -1067,9 +1232,9 @@ public class DateHelper {
 
     public String getVoteEndTimeString(long time) {
         try {
-            String year = date_Format_y.format(new Date(System.currentTimeMillis())) + ".";
+            String year = date_Formater_y.format(new Date(System.currentTimeMillis())) + ".";
 
-            String times = date_Format_10.format(new Date(time));
+            String times = date_Formater_10.format(new Date(time));
 
             if (times.startsWith(year)) {
                 return times.replace(year, "");
