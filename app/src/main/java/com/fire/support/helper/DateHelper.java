@@ -431,7 +431,7 @@ public class DateHelper {
     }
 
 
-    public String getRencentTime(long date) {
+    public String getRecentTime(long date) {
         Date time = new Date(date);
 
         String ftime = "";
@@ -471,7 +471,7 @@ public class DateHelper {
      * @param date
      * @return
      */
-    public String getRencentYearTime(long date) {
+    public String getRecentYearTime(long date) {
         Date time = new Date(date);
 
         String ftime = "";
@@ -511,7 +511,7 @@ public class DateHelper {
     }
 
 
-    public String getRencentTimeIM(long date) {
+    public String getRecentTimeIM(long date) {
         Date time = new Date(date);
         String ftime = "";
         Calendar cal = Calendar.getInstance();
@@ -533,7 +533,7 @@ public class DateHelper {
         return ftime;
     }
 
-    public String getRencentTimeNotice(long date) {
+    public String getRecentTimeNotice(long date) {
         Date time = new Date(date);
 
         String ftime = "";
