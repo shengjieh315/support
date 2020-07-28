@@ -21,10 +21,51 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    signingConfigs {
+        debug {
+            storeFile file("../app/supportup.jks")
+            storePassword "S_h369749417"
+            keyAlias "supportup"
+            keyPassword "S_h369749417"
+            // 如果要支持最新版的系统 Android 7.0
+            // 这一行必须加，否则安装时会提示没有签名
+            // 作用是只使用旧版签名，禁用V2版签名模式
+            v2SigningEnabled true
+        }
+
+        release {
+            storeFile file("../app/supportup.jks")
+            storePassword "S_h369749417"
+            keyAlias "supportup"
+            keyPassword "S_h369749417"
+            // 如果要支持最新版的系统 Android 7.0
+            // 这一行必须加，否则安装时会提示没有签名
+            // 作用是只使用旧版签名，禁用V2版签名模式
+            v2SigningEnabled true
+        }
+    }
+
     buildTypes {
         release {
-            minifyEnabled false
+            debuggable true
+            minifyEnabled true //启用Proguard
+            shrinkResources true //是否清理无用资源,依赖于minifyEnabled
+            zipAlignEnabled true //是否启用zipAlign压缩
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            applicationVariants.all { variant ->
+                variant.outputs.all {
+                    outputFileName = "${getGitBranch()}_${defaultConfig.applicationId}_${defaultConfig.versionCode}_${defaultConfig.versionName}.apk"
+                }
+            }
+        }
+        debug {
+            debuggable true
+            minifyEnabled false  //不启用Proguard
+            shrinkResources false //是否清理无用资源,依赖于minifyEnabled
+            zipAlignEnabled false //是否启用zipAlign压缩
+            signingConfig signingConfigs.debug
         }
     }
 
@@ -34,6 +75,16 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
+
+
+}
+
+
+/**
+ * 获取Git 分支名
+ */
+def getGitBranch() {
+    return 'git symbolic-ref --short -q HEAD'.execute().text.trim()
 }
 
 dependencies {

@@ -50,4 +50,37 @@
         <attr name="is_coo" format="boolean" />
     </declare-styleable>
 
+    <style name="AppTheme.Full">
+
+        <item name="android:windowFullscreen">true</item>
+
+    </style>
+
+    <style name="AppTheme.Full.Back">
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">false</item>
+
+        <item name="colorControlNormal">@color/colorBlackB6</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="colorSwitchThumbNormal">@color/colorBlackB6</item>
+
+    </style>
+
+    <style name="AppTheme.Main.Back">
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">false</item>
+
+    </style>
+
+
+    <style name="AppTheme.Back">
+
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">false</item>
+
+    </style>
+
 </resources>

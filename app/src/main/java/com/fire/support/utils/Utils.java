@@ -26,6 +26,272 @@ public class Utils {
 
 
     /**
+     * 切换activity
+     *
+     * @param v      View
+     * @param act    Activity
+     * @param intent Intent
+     * @param type   0 normal 1  fabin 2 up 3 Scale
+     */
+    private static void start2Activity(View v, Context act, Intent intent, int type) {
+        if (act == null) {
+            return;
+        }
+
+        try {
+            noMultiClick(v);
+
+
+            act.startActivity(intent);
+
+
+            if (act instanceof Activity) {
+                Activity activity = (Activity) act;
+                switch (type) {
+
+                    case 0:
+                        // left动画移动方向向左
+
+                        activity.overridePendingTransition(R.anim.activity_switch_push_left_in,
+                                R.anim.activity_switch_push_left_out);
+                        break;
+
+                    case 1:
+                        activity.overridePendingTransition(R.anim.anima_alpha_share_in,
+                                R.anim.anima_alpha_share_out);
+                        break;
+
+
+                    case 2:
+                        activity.overridePendingTransition(R.anim.activity_switch_push_up_in,
+                                R.anim.activity_switch_push_up_out);
+                        break;
+
+
+                    case 3:
+                        activity.overridePendingTransition(R.anim.unzoom_in,
+                                R.anim.unzoom_out);
+                        break;
+                    case 4:
+                        activity.overridePendingTransition(R.anim.activity_switch_push_left_in,
+                                R.anim.activity_switch_push_no_change);
+                        break;
+                }
+            }
+        } catch (Throwable e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+
+    /**
+     * activity切换动画 左右
+     *
+     * @param v      View
+     * @param act    Activity
+     * @param intent Intent
+     */
+    public static void startActivity(View v, Context act, Intent intent) {
+
+        start2Activity(v, act, intent, 0);
+
+    }
+
+    /**
+     * activity切换动画 淡入淡出
+     *
+     * @param v      View
+     * @param act    Activity
+     * @param intent Intent
+     */
+    public static void startActivityFabIn(View v, Context act, Intent intent) {
+
+
+        start2Activity(v, act, intent, 1);
+
+    }
+
+    /**
+     * activity切换动画 上下
+     *
+     * @param act    Activity
+     * @param intent Intent
+     */
+    public static void startActivityUp(View v, Context act, Intent intent) {
+        start2Activity(v, act, intent, 2);
+
+    }
+
+    /**
+     * activity切换动画 覆盖
+     *
+     * @param act    Activity
+     * @param intent Intent
+     */
+    public static void startActivityCover(View v, Context act, Intent intent) {
+        start2Activity(v, act, intent, 4);
+
+    }
+
+
+    /**
+     * activity切换动画 上下
+     *
+     * @param act    Activity
+     * @param intent Intent
+     */
+    public static void startActivityUpForResult(View v, Context act, Intent intent, int requestCode) {
+
+
+        noMultiClick(v);
+
+        if (act instanceof Activity) {
+            Activity activity = (Activity) act;
+            activity.startActivityForResult(intent, requestCode);
+            activity.overridePendingTransition(R.anim.activity_switch_push_up_in,
+                    R.anim.activity_switch_push_up_out);
+        } else {
+            act.startActivity(intent);
+        }
+
+    }
+
+    /**
+     * activity切换动画 缩放
+     *
+     * @param act    Activity
+     * @param intent Intent
+     */
+    public static void startActivityScale(View v, Context act, Intent intent) {
+
+        start2Activity(v, act, intent, 3);
+    }
+
+
+    /**
+     * activity切换动画
+     *
+     * @param act         Activity
+     * @param intent      Intent
+     * @param requestCode int
+     */
+    public static void startActivityForResult(View v, Context act, Intent intent, int requestCode) {
+
+
+        noMultiClick(v);
+
+        if (act instanceof Activity) {
+            Activity activity = (Activity) act;
+            activity.startActivityForResult(intent, requestCode);
+            activity.overridePendingTransition(R.anim.activity_switch_push_left_in,
+                    R.anim.activity_switch_push_left_out);
+        } else {
+            act.startActivity(intent);
+        }
+
+    }
+
+
+    /**
+     * 销毁活动页
+     *
+     * @param act  Activity
+     * @param type int
+     */
+    private static void finishActivity(Activity act, int type) {
+        if (act == null) {
+            return;
+        }
+        act.finish();
+        switch (type) {
+
+            case 0:
+                act.overridePendingTransition(R.anim.activity_switch_push_right_in,
+                        R.anim.activity_switch_push_right_out);
+                break;
+
+
+            case 1:
+                act.overridePendingTransition(R.anim.anima_alpha_share_in,
+                        R.anim.anima_alpha_share_out);
+                break;
+
+            case 2:
+
+                act.overridePendingTransition(R.anim.activity_switch_push_down_in,
+                        R.anim.activity_switch_push_down_out);
+                break;
+            case 3:
+                act.overridePendingTransition(R.anim.zoom_enter,
+                        R.anim.zoom_exit);
+                break;
+            case 4:
+                act.overridePendingTransition(R.anim.activity_switch_push_no_change,
+                        R.anim.activity_switch_push_right_out);
+                break;
+        }
+
+
+    }
+
+    /**
+     * activity销毁动画
+     *
+     * @param act Activity 左右
+     */
+    public static void finish(Activity act) {
+
+        finishActivity(act, 0);
+
+
+    }
+
+    /**
+     * activity销毁动画 淡出
+     *
+     * @param act Activity
+     */
+    public static void finishFabin(Activity act) {
+        finishActivity(act, 1);
+    }
+
+    /**
+     * activity销毁动画 向下
+     *
+     * @param act Activity
+     */
+    public static void finishUp(Activity act) {
+
+        finishActivity(act, 2);
+
+    }
+
+
+    /**
+     * activity销毁动画 缩放
+     *
+     * @param act Activity
+     */
+    public static void finishScale(Activity act) {
+        finishActivity(act, 3);
+
+
+    }
+
+    /**
+     * activity销毁动画 覆盖
+     *
+     * @param act Activity
+     */
+    public static void finishCover(Activity act) {
+        finishActivity(act, 4);
+
+
+    }
+
+    /**
      * activity是否在顶层
      *
      * @param activity Activity
