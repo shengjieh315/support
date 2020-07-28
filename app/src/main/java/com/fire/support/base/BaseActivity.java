@@ -13,6 +13,7 @@ import android.widget.EditText;
 
 import com.fire.support.R;
 import com.fire.support.helper.PhoneHelper;
+import com.fire.support.utils.StatusBarUtil;
 import com.fire.support.utils.Utils;
 import com.fire.support.utils.screen.ScreenAdaptUtil;
 
@@ -32,8 +33,16 @@ public abstract class BaseActivity extends AppCompatActivity {
         try {
             ScreenAdaptUtil.setCustomDensity(context, getApplication());
             if (Utils.isMaxLOLLIPOP()) {
+                StatusBarUtil.setTranslucent(this);
+                StatusBarUtil.setLightMode(this);
                 View rootView = findViewById(android.R.id.content);
-                rootView.setPadding(0, getStatusBarHeight(), 0, 0);
+                if (isPaddingStatusBar()) {
+                    rootView.setPadding(0, getStatusBarHeight(), 0, 0);
+                }
+                int resId = getBackgroundResource();
+                if (resId != 0) {
+                    rootView.setBackgroundResource(resId);
+                }
             }
             initView(savedInstanceState);
             initListener(savedInstanceState);
@@ -163,5 +172,16 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     }
 
+    protected boolean isPaddingStatusBar() {
+        return false;
+    }
+
+    /**
+     * 背景
+     * @return
+     */
+    protected int getBackgroundResource() {
+        return 0;
+    }
 
 }

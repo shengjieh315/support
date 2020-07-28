@@ -84,4 +84,13 @@ public class MainActivity extends BaseActivity {
         view.startAnimation(scaleAnimation);
     }
 
+    @Override
+    protected boolean isPaddingStatusBar() {
+        return true;
+    }
+
+    @Override
+    protected int getBackgroundResource() {
+        return R.color.colorWhite;
+    }
 }
