@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.ScaleAnimation;
 
-import com.canyinghao.canadapter.CanOnItemListener;
+import com.fire.adapter.SpOnItemListener;
 import com.fire.support.R;
 import com.fire.support.adapter.MainAdapter;
 import com.fire.support.base.BaseActivity;
@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initListener(Bundle savedInstanceState) {
-        mMainAdapter.setOnItemListener(new CanOnItemListener() {
+        mMainAdapter.setOnItemListener(new SpOnItemListener() {
             @Override
             public void onItemChildClick(View view, int position) {
                 switch (mMainAdapter.getItem(position).id) {
