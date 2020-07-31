@@ -12,6 +12,7 @@ import com.fire.support.base.BaseActivity;
 import com.fire.support.model.MainItemBean;
 import com.fire.support.ui.demo.GalleryActivity;
 import com.fire.support.ui.demo.GaussianBlurActivity;
+import com.fire.support.ui.demo.PullActivity;
 import com.fire.support.ui.demo.RxJavaActivity;
 
 import java.util.ArrayList;
@@ -56,6 +57,9 @@ public class MainActivity extends BaseActivity {
                     case 4://rx
                         startActivity(new Intent(MainActivity.this, RxJavaActivity.class));
                         break;
+                    case 5://下拉刷新、加载更多
+                        startActivity(new Intent(MainActivity.this, PullActivity.class));
+                        break;
                 }
             }
         });
@@ -80,6 +84,10 @@ public class MainActivity extends BaseActivity {
         rx.id = 4;
         rx.title = "rx";
         list.add(rx);
+        MainItemBean pull = new MainItemBean();
+        pull.id = 5;
+        pull.title = "下拉刷新、加载更多";
+        list.add(pull);
         mMainAdapter.setList(list);
     }
 

@@ -24,4 +24,12 @@
     <string name="refresh_pull_down">下拉刷新哦</string>
     <string name="refresh_time">上次刷新时间：%1$s</string>
 
+
+    <string name="msg_trying_loading">努力加载中~</string>
+    <string name="msg_loading">加载中&#8230;</string>
+    <string name="msg_network_error">网络故障啦，快检查一下</string>
+    <string name="msg_no_data_available">空空如也</string>
+
+    <string name="msg_try_again">重试</string>
+
 </resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/fl_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/iv_progress"
+            android:layout_width="@dimen/dimen_432"
+            android:layout_height="@dimen/dimen_190"
+            android:layout_gravity="center_horizontal"
+            android:adjustViewBounds="true"
+            android:contentDescription="@null"
+            app:actualImageResource="@mipmap/icon_all_loading_5"
+            app:actualImageScaleType="centerInside" />
+
+        <TextView
+            android:id="@+id/tv_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_100"
+            android:layout_gravity="bottom|center_horizontal"
+            android:gravity="center"
+            android:lineSpacingExtra="3dp"
+            android:maxLines="2"
+            android:minWidth="@dimen/dimen_432"
+            android:paddingLeft="@dimen/dimen_20"
+            android:paddingRight="@dimen/dimen_20"
+            android:text="@string/msg_trying_loading"
+            android:textColor="@color/colorBlackB6"
+            android:textSize="@dimen/text_24" />
+
+    </FrameLayout>
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/iv_loading"
+        android:layout_width="@dimen/dimen_150"
+        android:layout_height="@dimen/dimen_76"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:contentDescription="@null" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_try_again"
+        style="?attr/buttonBarPositiveButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/msg_try_again"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_30"
+        android:visibility="gone"
+        tools:visibility="visible" />
+
+</LinearLayout>

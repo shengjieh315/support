@@ -704,10 +704,7 @@ public class RefreshLayout extends FrameLayout {
      * @return boolean
      */
     private boolean canRefresh() {
-
-
-//        return !isHeaderRefreshing && mRefreshEnabled && mHeaderView != null && !canChildScrollUp();
-        return true;
+        return !isHeaderRefreshing && mRefreshEnabled && mHeaderView != null && !canChildScrollUp();
     }
 
     /**

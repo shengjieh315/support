@@ -11,6 +11,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.fire.support.R;
 import com.socks.library.KLog;
@@ -531,6 +532,53 @@ public class Utils {
             e.printStackTrace();
         }
     }
+
+
+    /**
+     * 获取随机值
+     *
+     * @param min int
+     * @param max int
+     * @return int
+     */
+    public static int randomWithRange(int min, int max) {
+        int range = (max - min) + 1;
+        return (int) (Math.random() * range) + min;
+    }
+
+
+    /**
+     * 设置ProgressBar颜色
+     *
+     * @param pb    ProgressBar
+     * @param color int
+     */
+    public static void setProgressColor(ProgressBar pb, int color) {
+
+        try {
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                ColorStateList stateList = ColorStateList.valueOf(color);
+                pb.setProgressTintList(stateList);
+                pb.setSecondaryProgressTintList(stateList);
+                pb.setIndeterminateTintList(stateList);
+            } else {
+                //                PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+                //                if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.GINGERBREAD_MR1) {
+                //                    mode = PorterDuff.Mode.MULTIPLY;
+                //                }
+                //                if (pb.getIndeterminateDrawable() != null)
+                //                    pb.getIndeterminateDrawable().setColorFilter(color, mode);
+                //                if (pb.getProgressDrawable() != null)
+                //                    pb.getProgressDrawable().setColorFilter(color, mode);
+            }
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+
+    }
+
+
 
 
 }
