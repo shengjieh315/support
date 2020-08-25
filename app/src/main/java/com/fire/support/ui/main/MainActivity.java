@@ -10,6 +10,7 @@ import com.fire.support.R;
 import com.fire.support.adapter.MainAdapter;
 import com.fire.support.base.BaseActivity;
 import com.fire.support.model.MainItemBean;
+import com.fire.support.ui.demo.CustomizeViewActivity;
 import com.fire.support.ui.demo.GalleryActivity;
 import com.fire.support.ui.demo.GaussianBlurActivity;
 import com.fire.support.ui.demo.PullActivity;
@@ -60,6 +61,9 @@ public class MainActivity extends BaseActivity {
                     case 5://下拉刷新、加载更多
                         startActivity(new Intent(MainActivity.this, PullActivity.class));
                         break;
+                    case 6://自定义滚动组件
+                        startActivity(new Intent(MainActivity.this, CustomizeViewActivity.class));
+                        break;
                 }
             }
         });
@@ -88,6 +92,10 @@ public class MainActivity extends BaseActivity {
         pull.id = 5;
         pull.title = "下拉刷新、加载更多";
         list.add(pull);
+        MainItemBean customize = new MainItemBean();
+        customize.id = 6;
+        customize.title = "自定义滚动组件";
+        list.add(customize);
         mMainAdapter.setList(list);
     }
 

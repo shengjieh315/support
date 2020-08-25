@@ -25,6 +25,7 @@
         <activity android:name=".ui.demo.GalleryActivity"/>
         <activity android:name=".ui.demo.PullActivity" />
         <activity android:name=".ui.demo.RxJavaActivity" />
+        <activity android:name=".ui.demo.CustomizeViewActivity" />
     </application>
 
 
