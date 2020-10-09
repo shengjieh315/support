@@ -13,6 +13,7 @@ import com.fire.support.model.MainItemBean;
 import com.fire.support.ui.demo.CustomizeViewActivity;
 import com.fire.support.ui.demo.GalleryActivity;
 import com.fire.support.ui.demo.GaussianBlurActivity;
+import com.fire.support.ui.demo.ImageCacheActivity;
 import com.fire.support.ui.demo.PullActivity;
 import com.fire.support.ui.demo.RxJavaActivity;
 
@@ -64,6 +65,9 @@ public class MainActivity extends BaseActivity {
                     case 6://自定义滚动组件
                         startActivity(new Intent(MainActivity.this, CustomizeViewActivity.class));
                         break;
+                    case 7://imageCache
+                        startActivity(new Intent(MainActivity.this, ImageCacheActivity.class));
+                        break;
                 }
             }
         });
@@ -96,6 +100,10 @@ public class MainActivity extends BaseActivity {
         customize.id = 6;
         customize.title = "自定义滚动组件";
         list.add(customize);
+        MainItemBean imageCache = new MainItemBean();
+        imageCache.id = 7;
+        imageCache.title = "ImageCache";
+        list.add(imageCache);
         mMainAdapter.setList(list);
     }
 
